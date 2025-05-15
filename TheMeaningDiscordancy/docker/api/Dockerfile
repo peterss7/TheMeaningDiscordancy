@@ -21,4 +21,6 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS final
 WORKDIR /app
 COPY --from=build /app/publish .
 EXPOSE 80
-ENTRYPOINT ["dotnet", "TheMeaningDiscordancy.Api.dll"]
+COPY ./entrypoint.ps1 /app/entrypoint.ps1
+ENTRYPOINT ["pwsh", "/app/entrypoint.ps1"]
+
