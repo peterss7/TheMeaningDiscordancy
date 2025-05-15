@@ -9,7 +9,9 @@ COPY ./src/TheMeaningDiscordancy.Infrastructure/TheMeaningDiscordancy.Infrastruc
 RUN dotnet restore ./TheMeaningDiscordancy.Api/TheMeaningDiscordancy.Api.csproj
 
 # Copy
-COPY ./src ./src
+COPY ./src/TheMeaningDiscordancy.Api ./TheMeaningDiscordancy.Api
+COPY ./src/TheMeaningDiscordancy.Core ./TheMeaningDiscordancy.Core
+COPY ./src/TheMeaningDiscordancy.Infrastructure ./TheMeaningDiscordancy.Infrastructure
 
 WORKDIR /src/TheMeaningDiscordancy.Api
 RUN dotnet publish "TheMeaningDiscordancy.Api.csproj" -c Release -o /app/publish

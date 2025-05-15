@@ -4,7 +4,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:45840;http://discordancy-api",
+      "applicationUrl": "http://localhost:45840;",
       "sslPort": 44304
     }
   },

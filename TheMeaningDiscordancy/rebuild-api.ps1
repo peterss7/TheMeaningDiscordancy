@@ -1,4 +1,4 @@
-# get and verify env variables
+# Path to env file
 $envFilePath = ".env"
 if (Test-Path $envFilePath) {
     Get-Content $envFilePath | ForEach-Object {
@@ -10,30 +10,27 @@ if (Test-Path $envFilePath) {
     }
 }
 else {
-    Write-Error "'.env' file not found."
+    Write-Error "'.env' file not found at $envFilePath"
     exit 1
 }
 
-Write-Host "🔧 Loaded configuration:"
-Write-Host "IMAGE_NAME: $env:IMAGE_NAME"
-Write-Host "CONTAINER_NAME: $env:CONTAINER_NAME"
-Write-Host "ENVIRONMENT: $env:ASPNETCORE_ENVIRONMENT"
-
-# Set strings
+# Set variables from environment
+$imageName = $env:IMAGE_NAME
 $containerName = $env:CONTAINER_NAME
 
-# Remove existing container
+# Stop and remove existing container if it exists
 if (docker ps -a --format '{{.Names}}' | Where-Object { $_ -eq $containerName }) {
-    Write-Host "⛔ Stopping and removing existing container..."
+    Write-Host "Stopping and removing existing container..."
     docker-compose down
 }
 
-# Build the Docker image
-Write-Host "Building Docker image..."
-docker-compose up --build -d
+# Rebuild image
+Write-Host "`nRebuilding Docker image: $imageName..."
+docker-compose up
+
 if ($LASTEXITCODE -ne 0) {
     Write-Error "Docker build failed."
     exit 1
 }
 
-Write-Host "`n✅ Application is running. Access Swagger at: http://localhost:7106/swagger"
+Write-Host "`n🚀 Container is running! Access Swagger at: http://localhost:7106/swagger"
