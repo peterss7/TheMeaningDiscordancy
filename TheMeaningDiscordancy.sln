@@ -5,9 +5,9 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheMeaningDiscordancy.Api", "TheMeaningDiscordancy\src\TheMeaningDiscordancy.Api\TheMeaningDiscordancy.Api.csproj", "{CE33F783-B3B5-4B2C-8BE4-4AED23B74F4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheMeaningDiscordancy.Core", "TheMeaningDiscordancy\src\TheMeaningDiscordancy.Core\TheMeaningDiscordancy.Core.csproj", "{FE59EB0C-35B4-42B2-86D9-A2DBD14EAB59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheMeaningDiscordancy.Core", "TheMeaningDiscordancy\src\TheMeaningDiscordancy.Core\TheMeaningDiscordancy.Core.csproj", "{FE59EB0C-35B4-42B2-86D9-A2DBD14EAB59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheMeaningDiscordancy.Infrastructure", "TheMeaningDiscordancy\src\TheMeaningDiscordancy.Infrastructure\TheMeaningDiscordancy.Infrastructure.csproj", "{394CDCD8-BA2E-4411-B313-3D84ADCE13FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheMeaningDiscordancy.Infrastructure", "TheMeaningDiscordancy\src\TheMeaningDiscordancy.Infrastructure\TheMeaningDiscordancy.Infrastructure.csproj", "{4745BD70-BC50-4D96-B188-CC8FA6B6BBF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{FE59EB0C-35B4-42B2-86D9-A2DBD14EAB59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE59EB0C-35B4-42B2-86D9-A2DBD14EAB59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE59EB0C-35B4-42B2-86D9-A2DBD14EAB59}.Release|Any CPU.Build.0 = Release|Any CPU
-		{394CDCD8-BA2E-4411-B313-3D84ADCE13FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{394CDCD8-BA2E-4411-B313-3D84ADCE13FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{394CDCD8-BA2E-4411-B313-3D84ADCE13FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{394CDCD8-BA2E-4411-B313-3D84ADCE13FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4745BD70-BC50-4D96-B188-CC8FA6B6BBF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4745BD70-BC50-4D96-B188-CC8FA6B6BBF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4745BD70-BC50-4D96-B188-CC8FA6B6BBF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4745BD70-BC50-4D96-B188-CC8FA6B6BBF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,18 +1,22 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TheMeaningDiscordancy.Core.CoreServices.Item.Services.Interfaces;
 
 namespace TheMeaningDiscordancy.Api.DiscordApi;
 
 [ApiController]
 [Route(PATH_ITEM_API)]
-public class ItemApiController
+public class ItemApiController : Controller
 {
     private const string PATH_ITEM_API = "items";
     private const string PATH_ITEM_GET = "get";
 
     private readonly ILogger<ItemApiController> _logger;
+    private readonly IItemService _itemService;
 
-    public ItemApiController(ILogger<ItemApiController> logger)
+    public ItemApiController(ILogger<ItemApiController> logger,
+        IItemService itemService)
     {
+        _itemService = itemService;
         _logger = logger;
     }
 

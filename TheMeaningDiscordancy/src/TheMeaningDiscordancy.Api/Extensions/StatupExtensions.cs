@@ -7,7 +7,7 @@ public static class StatupExtensions
 {
     public static void ConfigureServices(this IServiceCollection services)
     {
-        services.ConfigureDiscordServices();
+        services.ConfigurePersistenceServices();
         services.ConfigureCoreServices();
     }
 }

@@ -1,11 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using TheMeaningDiscordancy.Core.CoreServices.Item.Interfaces;
+using TheMeaningDiscordancy.Core.CoreServices.Item.Repositories;
+using TheMeaningDiscordancy.Core.CoreServices.Item.Repositories.Interfaces;
+using TheMeaningDiscordancy.Core.CoreServices.Item.Services;
+using TheMeaningDiscordancy.Core.CoreServices.Item.Services.Interfaces;
 
 namespace TheMeaningDiscordancy.Core.CoreServices.Item.Extensions;
 
@@ -14,6 +11,7 @@ public static class ItemStartupExtensions
     public static void ConfigureItemServices(this IServiceCollection services)
     {
         services.ConfigureServices();
+        services.ConfigureRespositories();
     }
 
     private static void ConfigureServices(this IServiceCollection services)
@@ -23,5 +21,6 @@ public static class ItemStartupExtensions
 
     private static void ConfigureRespositories(this IServiceCollection services)
     {
+        services.AddScoped<IItemRepository, ItemRepository>();
     }
 }
