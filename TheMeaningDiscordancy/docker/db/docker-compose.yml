@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      SA_PASSWORD: ${SA_PASSWORD}
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: ${MSSQL_PID}
+    ports:
+      - "1433:1433"
+    healthcheck:
+      test: ["CMD", "/opt/mssql-tools/bin/sqlcmd", "-S", "db", "-U", "sa", "-P", "${SA_PASSWORD}", "-Q", "SELECT 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    volumes:
+      - sqlvolume:/var/opt/mssql
+
+  init-db:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      SA_PASSWORD: ${SA_PASSWORD}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  sqlvolume:
